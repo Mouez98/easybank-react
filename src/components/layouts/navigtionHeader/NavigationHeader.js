@@ -2,7 +2,10 @@ import React from "react";
 
 import Container from "../../ui/Container";
 import Button from "../../ui/Button";
-import logo from '../../../assets/images/logo.svg'
+import logo from "../../../assets/images/logo.svg";
+import {FiAlignJustify}  from "react-icons/fi";
+
+import '../../../index.css'
 
 const NavigationHeader = () => {
   return (
@@ -10,8 +13,13 @@ const NavigationHeader = () => {
       <Container>
         <nav className="nav">
           <div className="logo-container">
-            <img src={logo}  alt="logo" />
-              </div>
+            <img src={logo} alt="logo" />
+          </div>
+          <div className="toggle-btn">
+            <button >
+              <FiAlignJustify />
+            </button>
+          </div>
           <div className="links-container">
             <ul className="links">
               <li>
@@ -32,9 +40,7 @@ const NavigationHeader = () => {
             </ul>
           </div>
           <div className="btn-container">
-           <Button>
-               Request Invite
-           </Button>
+            <Button>Request Invite</Button>
           </div>
         </nav>
       </Container>
