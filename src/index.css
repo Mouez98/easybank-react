@@ -6,16 +6,19 @@
 }
 
 :root {
-/* Primary Colors */
---Dark-Blue: hsl(233, 26%, 24%);
---Lime-Green: hsl(136, 65%, 51%);
---Bright-Cyan: hsl(192, 70%, 51%);
-/* Neutral */
+  font-size: 18px;
+  /* Primary Colors */
+  --Dark-Blue: hsl(233, 26%, 24%);
+  --Lime-Green: hsl(136, 65%, 51%);
+  --Bright-Cyan: hsl(192, 70%, 51%);
+  /* Neutral */
 
---Grayish-Blue: hsl(233, 8%, 62%);
---Light-Grayish-Blue: hsl(220, 16%, 96%);
---Very-Light-Gray: hsl(0, 0%, 98%);
---White: hsl(0, 0%, 100%);
+  --Grayish-Blue: hsl(233, 8%, 62%);
+  --Light-Grayish-Blue: hsl(220, 16%, 96%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+  /* Responsive design */
+  --Desktop: 765px;
 }
 ul {
   list-style: none;
@@ -27,16 +30,15 @@ a {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 18px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -56,11 +58,11 @@ code {
   box-shadow: 0px 2px 6px 0px #eee;
 }
 
-.hide-links{
-  height: 0; 
+.hide-links {
+  height: 0;
 }
-.show-links{
-  height: auto; 
+.show-links {
+  height: auto;
 }
 
 .links li {
@@ -69,8 +71,8 @@ code {
   transition: all 0.3s ease-out;
 }
 
-.links li:is(:active, :hover, :focus)  {
-  border-bottom: 3px solid ;
+.links li:is(:active, :hover, :focus) {
+  border-bottom: 3px solid;
   border-image: linear-gradient(135deg, var(--Lime-Green), var(--Bright-Cyan)) 1;
   transform: translateX(5px);
 }
@@ -81,7 +83,7 @@ code {
 }
 
 .links li:is(:active, :hover, :focus) a {
-   color: #000;
+  color: #000;
 }
 
 .btn-container {
@@ -89,78 +91,224 @@ code {
 }
 .btn {
   padding: 12px 20px;
-  background-image: linear-gradient(135deg, var(--Lime-Green) , var(--Bright-Cyan));
+  background-image: linear-gradient(
+    135deg,
+    var(--Lime-Green),
+    var(--Bright-Cyan)
+  );
   color: aliceblue;
   border-style: none;
   border-radius: 25px;
-} 
+}
 
 /* Header's nav */
 .nav-header {
   display: flex;
-  justify-content: space-between ;
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
 }
-.toggle-btn  {
+.toggle-btn {
   border: none;
   padding: 10px;
   background-color: transparent;
   transition: transform 0.3s ease-out;
-  }
-  
-  .toggle-btn:hover  {
-    transform: rotate(90deg);
-    
-  }
-  .toggle-btn:hover svg {
-    stroke: var(--Bright-Cyan);
-  }
+}
 
-  .toggle-btn svg {
+.toggle-btn:hover {
+  transform: rotate(90deg);
+}
+.toggle-btn:hover svg {
+  stroke: var(--Bright-Cyan);
+}
+
+.toggle-btn svg {
   height: 2em;
   width: 2em;
   stroke: var(--Grayish-Blue);
+}
+
+@media screen and (min-width: 800px) {
+  .container.nav-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .links-container {
+    height: auto;
+  }
+  .links {
+    display: flex;
+  }
+  .toggle-btn {
+    display: none;
+  }
+  .btn-container {
+    display: block;
+  }
+}
+
+/** Sections **/
+
+/* Digital banking */
+.digital-banking {
+  width: 100%;
+  background-image: linear-gradient(
+    180deg,
+    var(--Very-Light-Gray),
+    var(--White)
+  );
+}
+
+.digital-container {
+  display: block;
+}
+
+.desc {
+  padding: 0 8px;
+  margin-bottom: 22px;
+}
+
+.desc h2 {
+  color: var(--Dark-Blue);
+  font-weight: normal;
+  margin: 10px 0;
+  letter-spacing: 2px;
+}
+.desc p {
+  color: var(--Grayish-Blue);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+
+.digital-banking .part-two {
+  background: url(./assets//images/bg-intro-mobile.svg);
+  background-repeat: no-repeat;
+  padding: 10px;
+  background-size: cover;
+  margin: 0 0 10px;
+}
+
+.digital-banking .part-two img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* WhyEasyBanking section */
+
+.why-easybanking {
+  background-color: var(--Light-Grayish-Blue);
+  padding: 1rem;
+
+}
+.why-easybanking .title {
+  margin-bottom: 1rem;
+}
+.why-easybanking .title h2, .single-offer h3 {
+  color: var(--Dark-Blue);
+  font-weight: normal; 
+  width: 70%;
+  margin: 0 auto 0.8rem;
+}
+.why-easybanking .title p, .single-offer p {
+   color: var(--Grayish-Blue);
+}
+
+.single-offer {
+   margin: 1.6rem 0;
+} 
+/* Aricles Section */
+.articles {
+  
+}
+.articles h2, .single-article h3{
+   color: var(--Dark-Blue);
+   font-weight: normal;
+   margin: 1rem 0;
+}
+
+.single-article {
+  padding: 0.8rem;
+}
+
+
+.single-article img {
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.single-article .text{
+  padding: 0 2rem;
+  margin: 0.8rem 0 ;
+}
+.single-article .text p, small {
+  color: var(--Grayish-Blue);
+}
+
+@media screen and (min-width: 765px) {
+  .container {
+    width: 80%;
+  }
+  .digital-container {
+    display: flex;
+    margin-right: -6rem;
+    position: relative;
+  }
+  .digital-banking .part-one {
+    order: 1;
+    flex-basis: 40%;
+  }
+  .digital-banking .part-one h3,p {
+     margin-bottom: 1rem;
   }
 
-  @media screen  and (min-width: 800px) {
-    .container.nav-container {
-      display: flex;
-      justify-content: space-between;
-      
-    }
-    .links-container {
-      height: auto;
-    }
-    .links {
-      display: flex;
-    }
-    .toggle-btn {
-      display: none;
-    }
-    .btn-container {
-      display: block;
-    }
-  }
-
-  /** Sections **/
-
-  /* Digital banking */
-  .digital-banking {
-    width: 100%;
-    background-image: linear-gradient(180deg, var(--Very-Light-Gray), var(--White));
-  }
-
-  .digital-banking .part-two {
-    background: url(./assets//images/bg-intro-mobile.svg);
-    background-repeat: no-repeat;
+  .desc {
     padding: 10px;
+    margin-top: 3rem;
+  }
+  .digital-banking .part-two {
+    background: url(./assets/images/bg-intro-desktop.svg);
+    order: 2;
     background-size: cover;
-    margin: 0 0 10px;
+    background-position: -2rem -7rem;
+    flex-basis: 60%;
+    background-repeat: no-repeat;
+    overflow: hidden;
   }
-
   .digital-banking .part-two img {
-    width: 100%;
-    height: 100%;
+    width: 21rem;
+    position: relative;
+    height: 26rem;
+    top: -2rem;
+    right: -6rem;
   }
+  /* Easybanking section */
+  .why-easybanking {
+
+  }
+  .why-easybanking .offers-container {
+    display: flex;
+  }
+  .single-offer {
+  text-align: left;
+  padding: 0.8rem;
+  font-size: 0.8rem;
+  flex-basis: 25%;
+  }
+  .single-offer img {
+    width: 3rem;
+  }
+  .single-offer h3 {
+    width: 100%;
+    margin: 0.8rem 0;
+  }
+  /* Articles section */
+.articles {
+  
+}
+.articles-container {
+  display: flex;
+}
+}
 
 
