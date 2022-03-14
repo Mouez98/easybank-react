@@ -60,13 +60,14 @@ code {
 
 .hide-links {
   height: 0;
+  visibility: hidden;
 }
 .show-links {
   height: auto;
 }
 
 .links li {
-  padding: 10px 0;
+  padding: 0.1rem 0;
   margin: 0 5px;
   transition: all 0.3s ease-out;
 }
@@ -138,6 +139,11 @@ code {
   .links {
     display: flex;
   }
+  .hide-links {
+    height: auto;
+    visibility:visible;
+  }
+
   .toggle-btn {
     display: none;
   }
@@ -179,6 +185,9 @@ code {
   margin-bottom: 1rem;
 }
 
+.part-one {
+  margin-top: 2rem;
+}
 
 .digital-banking .part-two {
   background: url(./assets//images/bg-intro-mobile.svg);
@@ -193,55 +202,89 @@ code {
   height: 100%;
 }
 
-
-
 /* WhyEasyBanking section */
 
 .why-easybanking {
   background-color: var(--Light-Grayish-Blue);
   padding: 1rem;
-
 }
 .why-easybanking .title {
   margin-bottom: 1rem;
 }
-.why-easybanking .title h2, .single-offer h3 {
+.why-easybanking .title h2,
+.single-offer h3 {
   color: var(--Dark-Blue);
-  font-weight: normal; 
-  width: 70%;
+  font-weight: normal;
   margin: 0 auto 0.8rem;
 }
-.why-easybanking .title p, .single-offer p {
-   color: var(--Grayish-Blue);
+:is(.why-easybanking) p {
+  color: var(--Grayish-Blue);
 }
 
 .single-offer {
-   margin: 1.6rem 0;
-} 
+  margin: 1.6rem 0;
+}
 /* Aricles Section */
 .articles {
+ 
   
 }
-.articles h2, .single-article h3{
-   color: var(--Dark-Blue);
-   font-weight: normal;
-   margin: 1rem 0;
+.articles h2,
+.single-article h3 {
+  color: var(--Dark-Blue);
+  font-weight: normal;
+  margin: 1rem 0;
 }
 
 .single-article {
   padding: 0.8rem;
 }
 
-
 .single-article img {
   width: 100%;
   border-radius: 0.5rem 0.5rem 0 0;
 }
-.single-article .text{
-  padding: 0 2rem;
-  margin: 0.8rem 0 ;
+.single-article .text {
+  padding: 0 0.3rem;
+    text-align: left;
 }
-.single-article .text p, small {
+
+.single-article .text p,
+small {
+  color: var(--Grayish-Blue);
+  font-size: 0.9rem;
+}
+
+/** Footer **/
+footer {
+  background-color: var(--Dark-Blue);
+  padding: 1rem 0;
+  color: var(--White);
+}
+
+footer .logo {
+
+}
+footer .logo .icons{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+footer .footer-links {
+   
+}
+
+.footer-links li {
+  margin: 10px 0;
+}
+
+footer .footers-footer {
+  margin: 1rem 0;
+}
+footer .footers-footer p {
+  margin-top: 1rem;
   color: var(--Grayish-Blue);
 }
 
@@ -257,14 +300,17 @@ code {
   .digital-banking .part-one {
     order: 1;
     flex-basis: 40%;
+    text-align: left;
   }
-  .digital-banking .part-one h3,p {
-     margin-bottom: 1rem;
+  .digital-banking .part-one h3,
+  p {
+    margin-bottom: 1rem;
   }
 
   .desc {
     padding: 10px;
     margin-top: 3rem;
+    
   }
   .digital-banking .part-two {
     background: url(./assets/images/bg-intro-desktop.svg);
@@ -284,16 +330,21 @@ code {
   }
   /* Easybanking section */
   .why-easybanking {
-
   }
   .why-easybanking .offers-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 0.5rem
   }
   .single-offer {
-  text-align: left;
-  padding: 0.8rem;
-  font-size: 0.8rem;
-  flex-basis: 25%;
+    text-align: left;
+    font-size: 0.8rem;
+    padding-left: 0.8rem;
+  }
+  .why-easybanking .title {
+    margin-bottom: 1rem;
+    width: 70%;
+    text-align: left;
   }
   .single-offer img {
     width: 3rem;
@@ -303,12 +354,13 @@ code {
     margin: 0.8rem 0;
   }
   /* Articles section */
-.articles {
-  
+  .articles {
+  }
+  .articles-container {
+    display: flex;
+    flex-flow: wrap row;
+  }
+  .single-article {
+    flex: 0 1 auto 
+  }
 }
-.articles-container {
-  display: flex;
-}
-}
-
-

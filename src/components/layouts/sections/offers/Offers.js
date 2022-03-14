@@ -16,7 +16,7 @@ const Offers = () => {
         </div>
         <div className="offers-container">
           {offers &&
-            offers.map((offer) => <SingleOffer key={offer.key} {...offer} />)}
+            offers.map((offer) => <SingleOffer key={offer.id} {...offer} />)}
         </div>
       </Container>
     </section>
