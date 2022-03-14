@@ -141,7 +141,7 @@ code {
   }
   .hide-links {
     height: auto;
-    visibility:visible;
+    visibility: visible;
   }
 
   .toggle-btn {
@@ -226,8 +226,6 @@ code {
 }
 /* Aricles Section */
 .articles {
- 
-  
 }
 .articles h2,
 .single-article h3 {
@@ -246,7 +244,7 @@ code {
 }
 .single-article .text {
   padding: 0 0.3rem;
-    text-align: left;
+  text-align: left;
 }
 
 .single-article .text p,
@@ -263,9 +261,8 @@ footer {
 }
 
 footer .logo {
-
 }
-footer .logo .icons{
+footer .logo .icons {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -273,7 +270,6 @@ footer .logo .icons{
 }
 
 footer .footer-links {
-   
 }
 
 .footer-links li {
@@ -310,7 +306,6 @@ footer .footers-footer p {
   .desc {
     padding: 10px;
     margin-top: 3rem;
-    
   }
   .digital-banking .part-two {
     background: url(./assets/images/bg-intro-desktop.svg);
@@ -334,7 +329,7 @@ footer .footers-footer p {
   .why-easybanking .offers-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    gap: 0.5rem
+    gap: 0.5rem;
   }
   .single-offer {
     text-align: left;
@@ -354,13 +349,40 @@ footer .footers-footer p {
     margin: 0.8rem 0;
   }
   /* Articles section */
-  .articles {
-  }
+ 
   .articles-container {
     display: flex;
     flex-flow: wrap row;
+    margin: 2rem 0;
   }
   .single-article {
-    flex: 0 1 auto 
+    flex: 1 1 216px;
+  }
+  /* Footer */
+
+  footer .container {
+    display: flex;
+    align-items: center;
+  }
+
+  footer .logo {
+  }
+  footer .logo .icons {
+  }
+
+  footer .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    align-content: space-evenly;
+  }
+
+  .footer-links li {
+    margin: 0.3rem 0;
+  }
+
+  footer .footers-footer {
+    margin-left: auto;
+  }
+  footer .footers-footer p {
   }
 }
