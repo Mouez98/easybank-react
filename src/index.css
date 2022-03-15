@@ -4,9 +4,11 @@
   margin: 0;
   padding: 0;
 }
-
-:root {
+html {
   font-size: 18px;
+}
+:root {
+  
   /* Primary Colors */
   --Dark-Blue: hsl(233, 26%, 24%);
   --Lime-Green: hsl(136, 65%, 51%);
@@ -20,6 +22,7 @@
   /* Responsive design */
   --Desktop: 765px;
 }
+
 ul {
   list-style: none;
 }
@@ -30,7 +33,7 @@ a {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -91,6 +94,7 @@ code {
   display: none;
 }
 .btn {
+  cursor: pointer;
   padding: 12px 20px;
   background-image: linear-gradient(
     135deg,
@@ -100,6 +104,10 @@ code {
   color: aliceblue;
   border-style: none;
   border-radius: 25px;
+  transition: all 0.3s ease-out;
+}
+.btn:hover {
+  transform: scale(1.1);
 }
 
 /* Header's nav */
@@ -126,30 +134,6 @@ code {
   height: 2em;
   width: 2em;
   stroke: var(--Grayish-Blue);
-}
-
-@media screen and (min-width: 800px) {
-  .container.nav-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  .links-container {
-    height: auto;
-  }
-  .links {
-    display: flex;
-  }
-  .hide-links {
-    height: auto;
-    visibility: visible;
-  }
-
-  .toggle-btn {
-    display: none;
-  }
-  .btn-container {
-    display: block;
-  }
 }
 
 /** Sections **/
@@ -225,14 +209,14 @@ code {
   margin: 1.6rem 0;
 }
 /* Aricles Section */
-.articles {
-}
 .articles h2,
 .single-article h3 {
   color: var(--Dark-Blue);
   font-weight: normal;
   margin: 1rem 0;
 }
+
+
 
 .single-article {
   padding: 0.8rem;
@@ -260,8 +244,6 @@ footer {
   color: var(--White);
 }
 
-footer .logo {
-}
 footer .logo .icons {
   display: flex;
   justify-content: center;
@@ -269,8 +251,6 @@ footer .logo .icons {
   margin: 1rem 0;
 }
 
-footer .footer-links {
-}
 
 .footer-links li {
   margin: 10px 0;
@@ -284,10 +264,45 @@ footer .footers-footer p {
   color: var(--Grayish-Blue);
 }
 
+:is(.single-article h3,.icons li, .footer-links li ):hover {
+  color: var(--Bright-Cyan);
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+
 @media screen and (min-width: 765px) {
+  /* Nav */
+  .container.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .links-container {
+    height: auto;
+  }
+  .links {
+    display: flex;
+  }
+  .links li:hover {
+    transform: translateX(0);
+  }
+  .hide-links {
+    height: auto;
+    visibility: visible;
+  }
+
+  .toggle-btn {
+    display: none;
+  }
+  .btn-container {
+    display: block;
+  }
   .container {
     width: 80%;
   }
+
+/* digital-banking */
+
   .digital-container {
     display: flex;
     margin-right: -6rem;
@@ -324,8 +339,6 @@ footer .footers-footer p {
     right: -6rem;
   }
   /* Easybanking section */
-  .why-easybanking {
-  }
   .why-easybanking .offers-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
@@ -356,18 +369,14 @@ footer .footers-footer p {
     margin: 2rem 0;
   }
   .single-article {
-    flex: 1 1 216px;
+    min-width: 230px;
+    width: calc(100% / 4);
   }
   /* Footer */
 
   footer .container {
     display: flex;
     align-items: center;
-  }
-
-  footer .logo {
-  }
-  footer .logo .icons {
   }
 
   footer .footer-links {
@@ -383,6 +392,5 @@ footer .footers-footer p {
   footer .footers-footer {
     margin-left: auto;
   }
-  footer .footers-footer p {
-  }
+  
 }
