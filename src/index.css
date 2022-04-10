@@ -64,21 +64,25 @@ code {
 .hide-links {
   height: 0;
   visibility: hidden;
+  transition: all .3s linear;
 }
 .show-links {
+  transition: all .3s linear;
   height: auto;
 }
+
 
 .links li {
   padding: 0.1rem 0;
   margin: 0 5px;
-  transition: all 0.3s ease-out;
+  border-bottom: 3px solid transparent;
 }
 
 .links li:is(:active, :hover, :focus) {
-  border-bottom: 3px solid;
+  
   border-image: linear-gradient(135deg, var(--Lime-Green), var(--Bright-Cyan)) 1;
   transform: translateX(5px);
+  transition: all .3s linear;
 }
 
 .links li a {
@@ -116,25 +120,53 @@ code {
   justify-content: space-between;
   align-items: center;
 }
-.toggle-btn {
+.menu-icons {
+  width: 30px;
+  height: 20px;
+  position: relative;
+ 
+}
+
+.menu-icons span {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  background-color: hsl(233deg 26% 24%);
+  transition: all .3s linear;
+}
+
+.menu-icons span:first-child {
+top: 0;
+}
+.menu-icons span:nth-child(2) {
+top: 9px
+}
+.menu-icons span:last-child {
+top: 18px;
+}
+
+.menu-icons.cross span:first-child {
+  top: 9px;
+  transform: rotate(45deg);
+}
+.menu-icons.cross span:nth-child(2) {
+  opacity: 0;
+}
+.menu-icons.cross span:last-child {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+.toggle-btn{
   border: none;
   padding: 10px;
   background-color: transparent;
-  transition: transform 0.3s ease-out;
 }
 
-.toggle-btn:hover {
-  transform: rotate(90deg);
-}
-.toggle-btn:hover svg {
-  stroke: var(--Bright-Cyan);
-}
 
-.toggle-btn svg {
-  height: 2em;
-  width: 2em;
-  stroke: var(--Grayish-Blue);
-}
+
+
 
 /** Sections **/
 

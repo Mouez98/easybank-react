@@ -3,7 +3,6 @@ import React, {useState} from "react";
 import Container from "../../ui/Container";
 import Button from "../../ui/Button";
 import logo from "../../../assets/images/logo.svg";
-import { FiMenu } from "react-icons/fi";
 
 import "../../../index.css";
 
@@ -15,7 +14,11 @@ const [showLinks, setShowLinks]= useState(false)
         <div className="nav-header">
           <img src={logo} alt="logo" />
           <button className="toggle-btn" onClick={()=> setShowLinks((prev)=> !prev)}>
-            <FiMenu />
+            <div className={` ${showLinks? 'menu-icons cross': 'menu-icons'}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </button>
         </div>
         <div className={showLinks? 'show-links': 'hide-links'}>
